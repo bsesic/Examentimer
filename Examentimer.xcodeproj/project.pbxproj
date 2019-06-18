@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30836DA22B4DB7E00F97E67 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30836D922B4DB7E00F97E67 /* ItemViewController.swift */; };
+		B310C54722B0F3E900184DE6 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310C54622B0F3E900184DE6 /* ItemsTableViewController.swift */; };
+		B310C54D22B1274800184DE6 /* ExamenItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310C54C22B1274800184DE6 /* ExamenItemTableViewCell.swift */; };
+		B32A5CC422B631FC0019BC95 /* ExamenItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A5CC322B631FC0019BC95 /* ExamenItems.swift */; };
 		B32BA44422AFC0E9008D839E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BA44322AFC0E9008D839E /* AppDelegate.swift */; };
 		B32BA44622AFC0E9008D839E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BA44522AFC0E9008D839E /* ViewController.swift */; };
-		B32BA44922AFC0E9008D839E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32BA44722AFC0E9008D839E /* Main.storyboard */; };
 		B32BA44C22AFC0E9008D839E /* Examentimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B32BA44A22AFC0E9008D839E /* Examentimer.xcdatamodeld */; };
 		B32BA44E22AFC0EC008D839E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32BA44D22AFC0EC008D839E /* Assets.xcassets */; };
 		B32BA45122AFC0EC008D839E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32BA44F22AFC0EC008D839E /* LaunchScreen.storyboard */; };
 		B32BA45C22AFC0EC008D839E /* ExamentimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BA45B22AFC0EC008D839E /* ExamentimerTests.swift */; };
 		B32BA46722AFC0EC008D839E /* ExamentimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BA46622AFC0EC008D839E /* ExamentimerUITests.swift */; };
+		B32BA47522AFCA78008D839E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BA47422AFCA78008D839E /* SettingsViewController.swift */; };
+		B32BA47822AFD2D2008D839E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32BA47622AFD2D2008D839E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B30836D922B4DB7E00F97E67 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		B310C54622B0F3E900184DE6 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		B310C54C22B1274800184DE6 /* ExamenItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenItemTableViewCell.swift; sourceTree = "<group>"; };
+		B32A5CC322B631FC0019BC95 /* ExamenItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamenItems.swift; sourceTree = "<group>"; };
 		B32BA44022AFC0E9008D839E /* Examentimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examentimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32BA44322AFC0E9008D839E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B32BA44522AFC0E9008D839E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B32BA44822AFC0E9008D839E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B32BA44B22AFC0E9008D839E /* Examentimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Examentimer.xcdatamodel; sourceTree = "<group>"; };
 		B32BA44D22AFC0EC008D839E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B32BA45022AFC0EC008D839E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 		B32BA46222AFC0EC008D839E /* ExamentimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamentimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32BA46622AFC0EC008D839E /* ExamentimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamentimerUITests.swift; sourceTree = "<group>"; };
 		B32BA46822AFC0EC008D839E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B32BA47422AFCA78008D839E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B32BA47722AFD2D2008D839E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +111,12 @@
 			children = (
 				B32BA44322AFC0E9008D839E /* AppDelegate.swift */,
 				B32BA44522AFC0E9008D839E /* ViewController.swift */,
-				B32BA44722AFC0E9008D839E /* Main.storyboard */,
+				B32BA47422AFCA78008D839E /* SettingsViewController.swift */,
+				B32BA47622AFD2D2008D839E /* Main.storyboard */,
+				B32A5CC322B631FC0019BC95 /* ExamenItems.swift */,
+				B30836D922B4DB7E00F97E67 /* ItemViewController.swift */,
+				B310C54C22B1274800184DE6 /* ExamenItemTableViewCell.swift */,
+				B310C54622B0F3E900184DE6 /* ItemsTableViewController.swift */,
 				B32BA44D22AFC0EC008D839E /* Assets.xcassets */,
 				B32BA44F22AFC0EC008D839E /* LaunchScreen.storyboard */,
 				B32BA45222AFC0EC008D839E /* Info.plist */,
@@ -232,9 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32BA47822AFD2D2008D839E /* Main.storyboard in Resources */,
 				B32BA45122AFC0EC008D839E /* LaunchScreen.storyboard in Resources */,
 				B32BA44E22AFC0EC008D839E /* Assets.xcassets in Resources */,
-				B32BA44922AFC0E9008D839E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30836DA22B4DB7E00F97E67 /* ItemViewController.swift in Sources */,
 				B32BA44622AFC0E9008D839E /* ViewController.swift in Sources */,
+				B310C54722B0F3E900184DE6 /* ItemsTableViewController.swift in Sources */,
+				B310C54D22B1274800184DE6 /* ExamenItemTableViewCell.swift in Sources */,
+				B32A5CC422B631FC0019BC95 /* ExamenItems.swift in Sources */,
 				B32BA44C22AFC0E9008D839E /* Examentimer.xcdatamodeld in Sources */,
 				B32BA44422AFC0E9008D839E /* AppDelegate.swift in Sources */,
+				B32BA47522AFCA78008D839E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,20 +317,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B32BA44722AFC0E9008D839E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B32BA44822AFC0E9008D839E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B32BA44F22AFC0EC008D839E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B32BA45022AFC0EC008D839E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B32BA47622AFD2D2008D839E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B32BA47722AFD2D2008D839E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -439,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME8L55L8W3;
 				INFOPLIST_FILE = Examentimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME8L55L8W3;
 				INFOPLIST_FILE = Examentimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
