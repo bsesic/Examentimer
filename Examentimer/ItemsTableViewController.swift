@@ -11,6 +11,7 @@ import UIKit
 
  protocol ShouldDaysDelegate {
     func setShouldDays(days: Float)
+    func updateStatistics()
 }
 
 
@@ -23,11 +24,13 @@ class ItemsTableViewController: UITableViewController {
     var cellDetail: Int = 0
     var examenItemsDictionary: Dictionary = [String: String]()
     
-    var delegate: ShouldDaysDelegate!
+    var delegate: ShouldDaysDelegate?
     var ShouldDaysDelegate: ShouldDaysDelegate?
+    lazy var mainViewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
     
     // TODO: convert ExamenItem to Object (class)
     
+    @IBOutlet weak var shouldDaysLabelinTableView: UILabel!
     @IBOutlet weak var Label: UILabel!
     
     override func viewDidLoad() {
@@ -40,8 +43,8 @@ class ItemsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         loadFromSettings()
-        _ = updateStatistics()
-
+        updateStatistics()
+        
     }
     
     
@@ -82,7 +85,7 @@ class ItemsTableViewController: UITableViewController {
         examenItemsDictionary.merge([String(cellTitle): String(cellDetail)]){ (current, _) in current }
         
         saveToSettings()
-        _ = updateStatistics()
+        updateStatistics()
         tableView.reloadData()
  
     }
@@ -98,16 +101,15 @@ class ItemsTableViewController: UITableViewController {
     */
     
     
-   /*
+
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        // TODO: add checkmark
-        print("Accessory button tapped")
+        //print("Accessory button tapped")
         
-        // FIXME: checkbutton
+        // checkbutton
         let itemsArray = [Array(examenItemsDictionary.keys)[indexPath.row], Array(examenItemsDictionary.values)[indexPath.row]]
-        //performSegue(withIdentifier: "MasterToDetail", sender: itemsArray)
+        performSegue(withIdentifier: "MasterToDetail", sender: itemsArray)
     }
-*/
+
     
     
     // Override to support editing the table view.
@@ -183,54 +185,64 @@ class ItemsTableViewController: UITableViewController {
 
     
     func checkItem(indexPath:IndexPath ){
-        var returnArray = Array(examenItemsDictionary.values)[indexPath.row]
+        let returnArray = Array(examenItemsDictionary.values)[indexPath.row]
         var value:Int = Int(returnArray)! - 1
         if(value <= 0 ) { value = 0 }
         
         examenItemsDictionary.updateValue(String(value), forKey: Array( examenItemsDictionary.keys)[indexPath.row])
+        // save the data first
         saveToSettings()
-        _ = updateStatistics()
+        // reload the statistics
+        updateStatistics()
+
+
         tableView.reloadData()
     }
     
     
-    func updateStatistics() -> Float {
+    func updateStatistics() {
         // TODO: update statistics
-        
+        //mainViewController.updateStatistics()
+        //delegate?.updateStatistics()
+      
         //get the days
         let formatter = DateFormatter()
         formatter.dateFormat = "DD"
         let calendar = Calendar.current
         
-        let dueDate = calendar.startOfDay(for: savedDueDate!)
-        let today = calendar.startOfDay(for: Date())
         
-        let daysleft = calendar.dateComponents([.day], from: today, to: dueDate).day!
-        
-        //calculate statistics
-        //add all the item values together
-        
-        var result:Float = 0
-        for values in examenItemsDictionary.values{
-            print("Values \(values)")
-            result += Float(values)!
-        }
-        
-        if(daysleft > 0) {
-            //divide the values by the days
-            let sum:Float = result / Float(daysleft)
-            print ("Sum: \(sum)")
+        savedDueDate = defaults.object(forKey: "DueDate") as? Date
+        if(savedDueDate != nil) {
+            let dueDate = calendar.startOfDay(for: savedDueDate!)
+            let today = calendar.startOfDay(for: Date())
+            
+            let daysleft = calendar.dateComponents([.day], from: today, to: dueDate).day!
+            
+            //calculate statistics
+            //add all the item values together
+            
+            var result:Float = 0
 
-            // TODO: display new statistics
-            if(sum > 0) {
-                // FIXME: show days delegate is nil!
-                delegate?.setShouldDays(days: sum)
-                //XXX Label?.text = String(format: "%.2f", sum) + " / Tag"
-                //mainViewController.shouldDaysLabel.text = String(format: "%.2f", sum)  + " / Tag"
-                
-            } //else { return 0 }
-        } //else { return 0 }
-        return 0
+            if defaults.dictionary(forKey: "ExamenDictionary") != nil {
+                examenItemsDictionary = defaults.dictionary(forKey: "ExamenDictionary") as! [String : String]
+            }
+            
+            for values in examenItemsDictionary.values{
+                print("Values \(values)")
+                result += Float(values)!
+            }
+            
+            if(daysleft > 0) {
+                //divide the values by the days
+                let sum:Float = result / Float(daysleft)
+                print ("Sum: \(sum)")
+
+                if(sum > 0) {
+    
+                    shouldDaysLabelinTableView?.text = "SOLL: " + String(format: "%.2f", sum)  + " / Tag \nSUMME: " + String(result)
+                }
+            }
+        }
     }
     
     func loadFromSettings(){
@@ -258,7 +270,7 @@ extension ItemsTableViewController: ItemsDelegate {
         tableView.reloadData()
         
         saveToSettings()
-         _ = updateStatistics()
+        updateStatistics()
     }
     
 }
